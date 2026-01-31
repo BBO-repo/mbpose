@@ -13,12 +13,12 @@ This project aims to build a robot equipped with **only a camera** that performs
 
 ---
 
-To run the Gazebo Rviz demo, just log into the docker container built with the `Dockerfile` terminal and run:
+To run the Gazebo Rviz demo, log into the docker container built with the `Dockerfile` and run:
 ```sh
-cd /workspace/ros2_ws/
+cd /workspace
 colcon build --symlink-install
 source install/setup.bash
-ros2 launch ackermann-vehicle-bringup ackermann-vehicle-spawn.launch.py
+ros2 launch mbpose-bringup mbpose-spawn.launch.py
 ```
 Note: To move the robot, make sure Gazebo is running by pressing the play button in Gazebo opened GUI.<br>
 

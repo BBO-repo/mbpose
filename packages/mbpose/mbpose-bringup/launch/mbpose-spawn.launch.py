@@ -14,8 +14,8 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # Setup project paths
-    pkg_project_bringup = get_package_share_directory('ackermann-vehicle-bringup')
-    pkg_project_description = get_package_share_directory('ackermann-vehicle-description')
+    pkg_project_bringup = get_package_share_directory('mbpose-bringup')
+    pkg_project_description = get_package_share_directory('mbpose-description')
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     
 
@@ -31,7 +31,7 @@ def generate_launch_description():
         launch_arguments={'gz_args': PathJoinSubstitution([
             pkg_project_description,
             'worlds',
-            'ackermann-vehicle-world.sdf'
+            'mbpose-world.sdf'
         ])}.items(),
     )
 
@@ -50,7 +50,7 @@ def generate_launch_description():
     rviz = Node(
        package='rviz2',
        executable='rviz2',
-       arguments=['-d', os.path.join(pkg_project_bringup, 'rviz', 'ackermann-vehicle.rviz')],
+       arguments=['-d', os.path.join(pkg_project_bringup, 'rviz', 'mbpose.rviz')],
        condition=IfCondition(LaunchConfiguration('rviz'))
     )
 

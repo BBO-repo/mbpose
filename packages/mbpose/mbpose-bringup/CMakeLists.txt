@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(ackermann-vehicle-bringup)
+project(mbpose-bringup)
 
 find_package(ament_cmake REQUIRED)
-find_package(ackermann-vehicle-description REQUIRED)
+find_package(mbpose-description REQUIRED)
 
 install(
   DIRECTORY
