@@ -70,14 +70,14 @@
     </link>
 
     <!--
-      Camera Link
-      ===========
+      Front Camera Link
+      =================
       Front-facing camera sensor for visual perception.
       Positioned at the front center of the vehicle.
     -->
-    <link name='camera_link'>
+    <link name='front_camera_link'>
       <!-- Gazebo frame identifier for ROS integration -->
-      <gz_frame_id>vehicle/camera_link</gz_frame_id>
+      <gz_frame_id>vehicle/front_camera_link</gz_frame_id>
       <!-- Position: front center of vehicle, elevated for good field of view -->
       <!-- Rear face of camera box aligned with front face of chassis -->
       <pose>0.904283 0 0.35 0 0 0</pose>
@@ -96,7 +96,7 @@
       </inertial>
       
       <!-- Visual representation: small box representing camera body -->
-      <visual name='camera_link_visual'>
+      <visual name='front_camera_link_visual'>
         <geometry>
           <box>
             <size>0.1 0.08 0.06</size>
@@ -110,7 +110,7 @@
       </visual>
       
       <!-- Collision geometry: matches visual -->
-      <collision name='camera_link_collision'>
+      <collision name='front_camera_link_collision'>
         <geometry>
           <box>
             <size>0.1 0.08 0.06</size>
@@ -118,8 +118,8 @@
         </geometry>
       </collision>
       
-      <!-- Camera sensor -->
-      <sensor name='camera' type='camera'>
+      <!-- Front camera sensor -->
+      <sensor name='front_camera' type='camera'>
         <camera>
           <horizontal_fov>1.047</horizontal_fov>
           <image>
@@ -134,19 +134,19 @@
         <always_on>true</always_on>
         <update_rate>30</update_rate>
         <visualize>false</visualize>
-        <topic>camera/image_raw</topic>
+        <topic>front_camera/image_raw</topic>
       </sensor>
     </link>
 
     <!--
-      Camera Joint
-      ============
-      Fixed joint connecting the camera to the base link.
+      Front Camera Joint
+      ==================
+      Fixed joint connecting the front camera to the base link.
       This ensures the camera moves with the vehicle.
     -->
-    <joint name='camera_joint' type='fixed'>
+    <joint name='front_camera_joint' type='fixed'>
       <parent>base_link</parent>
-      <child>camera_link</child>
+      <child>front_camera_link</child>
     </joint>
 
     <!--

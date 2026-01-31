@@ -85,13 +85,13 @@ def generate_launch_description():
                    'vehicle/base_link', 'base_link']
     )
     
-    # Static transform to create camera_link alias (without prefix)
-    camera_link_tf = Node(
+    # Static transform to create front_camera_link alias (without prefix)
+    front_camera_link_tf = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
-        name='camera_link_tf_publisher',
+        name='front_camera_link_tf_publisher',
         arguments=['0', '0', '0', '0', '0', '0', '1',
-                   'vehicle/camera_link', 'camera_link']
+                   'vehicle/front_camera_link', 'front_camera_link']
     )
     
     return LaunchDescription([
@@ -101,6 +101,6 @@ def generate_launch_description():
         bridge,
         robot_state_publisher,
         base_link_tf,
-        camera_link_tf,
+        front_camera_link_tf,
         rviz
     ])
