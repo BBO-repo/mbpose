@@ -1,13 +1,17 @@
-# ROS2 Jazzy and Gazebo Harmonic simulation of 4 wheeled ackermann drive robot vehicle
-A ROS 2 Jazzy package for simulate a four wheeled ackermann drive robot within Gazebo Harmonic simulator.<br>
+# camera-only Ackermann vehicle with visual marker (AprilTag) localization
 
-The project works out of the box in a docker container built with the provided Dockerfile.<br>
-This package is intended to be used as a template to build some more sophisticated vehicle robots with diverses sensors added on top of it.<br><br>
+This project aims to build a robot equipped with **only a camera** that performs **localization using visual markers** such as [AprilTag](https://april.eecs.umich.edu/software/apriltag). The robotic stack is ROS2 Jazzy & Gazebo Harmonic and works out of the box in a docker container built with the provided Dockerfile.<br>
 
+**Note:** This work is still in progress.
 
+---
 ![gazebo-rviz-acker-drive](assets/gazebo-rviz-acker-drive.gif)
 
-<br>
+---
+
+**Note:** This repository uses the [ros2-jazzy-gazebo-harmonic-ackermann-drive](https://github.com/BBO-repo/ros2-jazzy-gazebo-harmonic-ackermann-drive) repository for the basic Ackermann drive vehicle simulation.
+
+---
 
 To run the Gazebo Rviz demo, just log into the docker container built with the `Dockerfile` terminal and run:
 ```sh
