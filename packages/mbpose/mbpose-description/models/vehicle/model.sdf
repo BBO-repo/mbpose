@@ -150,6 +150,192 @@
     </joint>
 
     <!--
+      Rear Camera Link
+      ================
+      Rear-facing camera sensor. Positioned at the rear center of the vehicle.
+      Yaw 180° (π rad) so the camera faces -x (rear).
+    -->
+    <link name='rear_camera_link'>
+      <gz_frame_id>vehicle/rear_camera_link</gz_frame_id>
+      <pose>-0.904283 0 0.35 0 0 3.14159</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='rear_camera_link_visual'>
+        <geometry>
+          <box>
+            <size>0.1 0.08 0.06</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.0 1.0 0.0 1</ambient>
+          <diffuse>0.0 1.0 0.0 1</diffuse>
+          <specular>0.0 0.5 0.0 1</specular>
+        </material>
+      </visual>
+      <collision name='rear_camera_link_collision'>
+        <geometry>
+          <box>
+            <size>0.1 0.08 0.06</size>
+          </box>
+        </geometry>
+      </collision>
+      <sensor name='rear_camera' type='camera'>
+        <camera>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <always_on>true</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+        <topic>rear_camera/image_raw</topic>
+      </sensor>
+    </link>
+    <joint name='rear_camera_joint' type='fixed'>
+      <parent>base_link</parent>
+      <child>rear_camera_link</child>
+    </joint>
+
+    <!--
+      Left Camera Link
+      ================
+      Left-facing camera sensor. Positioned at the left side center of the vehicle.
+      Yaw 90° (π/2 rad) so the camera faces +y (left).
+    -->
+    <link name='left_camera_link'>
+      <gz_frame_id>vehicle/left_camera_link</gz_frame_id>
+      <pose>0 0.5 0.35 0 0 1.5708</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='left_camera_link_visual'>
+        <geometry>
+          <box>
+            <size>0.1 0.08 0.06</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.0 0.0 1.0 1</ambient>
+          <diffuse>0.0 0.0 1.0 1</diffuse>
+          <specular>0.0 0.0 0.5 1</specular>
+        </material>
+      </visual>
+      <collision name='left_camera_link_collision'>
+        <geometry>
+          <box>
+            <size>0.1 0.08 0.06</size>
+          </box>
+        </geometry>
+      </collision>
+      <sensor name='left_camera' type='camera'>
+        <camera>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <always_on>true</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+        <topic>left_camera/image_raw</topic>
+      </sensor>
+    </link>
+    <joint name='left_camera_joint' type='fixed'>
+      <parent>base_link</parent>
+      <child>left_camera_link</child>
+    </joint>
+
+    <!--
+      Right Camera Link
+      =================
+      Right-facing camera sensor. Positioned at the right side center of the vehicle.
+      Yaw -90° (-π/2 rad) so the camera faces -y (right).
+    -->
+    <link name='right_camera_link'>
+      <gz_frame_id>vehicle/right_camera_link</gz_frame_id>
+      <pose>0 -0.5 0.35 0 0 -1.5708</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='right_camera_link_visual'>
+        <geometry>
+          <box>
+            <size>0.1 0.08 0.06</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1.0 0.5 0.0 1</ambient>
+          <diffuse>1.0 0.5 0.0 1</diffuse>
+          <specular>0.5 0.25 0.0 1</specular>
+        </material>
+      </visual>
+      <collision name='right_camera_link_collision'>
+        <geometry>
+          <box>
+            <size>0.1 0.08 0.06</size>
+          </box>
+        </geometry>
+      </collision>
+      <sensor name='right_camera' type='camera'>
+        <camera>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <always_on>true</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+        <topic>right_camera/image_raw</topic>
+      </sensor>
+    </link>
+    <joint name='right_camera_joint' type='fixed'>
+      <parent>base_link</parent>
+      <child>right_camera_link</child>
+    </joint>
+
+    <!--
       Front Left Wheel Link
       =====================
       The left front wheel of the vehicle. This wheel can both rotate (for propulsion)

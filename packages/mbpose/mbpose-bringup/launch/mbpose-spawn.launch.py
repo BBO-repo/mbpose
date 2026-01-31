@@ -93,7 +93,30 @@ def generate_launch_description():
         arguments=['0', '0', '0', '0', '0', '0', '1',
                    'vehicle/front_camera_link', 'front_camera_link']
     )
-    
+
+    # Static transforms for rear, left, and right camera link aliases
+    rear_camera_link_tf = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='rear_camera_link_tf_publisher',
+        arguments=['0', '0', '0', '0', '0', '0', '1',
+                   'vehicle/rear_camera_link', 'rear_camera_link']
+    )
+    left_camera_link_tf = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='left_camera_link_tf_publisher',
+        arguments=['0', '0', '0', '0', '0', '0', '1',
+                   'vehicle/left_camera_link', 'left_camera_link']
+    )
+    right_camera_link_tf = Node(
+        package='tf2_ros',
+        executable='static_transform_publisher',
+        name='right_camera_link_tf_publisher',
+        arguments=['0', '0', '0', '0', '0', '0', '1',
+                   'vehicle/right_camera_link', 'right_camera_link']
+    )
+
     return LaunchDescription([
         gz_sim,
         gz_spawn_entity,
@@ -102,5 +125,8 @@ def generate_launch_description():
         robot_state_publisher,
         base_link_tf,
         front_camera_link_tf,
+        rear_camera_link_tf,
+        left_camera_link_tf,
+        right_camera_link_tf,
         rviz
     ])

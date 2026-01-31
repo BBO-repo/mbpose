@@ -112,6 +112,21 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        left_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         front_left_wheel_link:
           Alpha: 1
           Show Axes: false
@@ -161,6 +176,12 @@ Visualization Manager:
           Value: true
         front_camera_link:
           Value: true
+        left_camera_link:
+          Value: true
+        rear_camera_link:
+          Value: true
+        right_camera_link:
+          Value: true
         odom:
           Value: true
         vehicle:
@@ -170,6 +191,18 @@ Visualization Manager:
         vehicle/front_camera_link:
           Value: true
         vehicle/front_camera_link/front_camera:
+          Value: true
+        vehicle/left_camera_link:
+          Value: true
+        vehicle/left_camera_link/left_camera:
+          Value: true
+        vehicle/rear_camera_link:
+          Value: true
+        vehicle/rear_camera_link/rear_camera:
+          Value: true
+        vehicle/right_camera_link:
+          Value: true
+        vehicle/right_camera_link/right_camera:
           Value: true
         vehicle/front_left_wheel_link:
           Value: false
@@ -195,8 +228,23 @@ Visualization Manager:
               base_link:
                 front_camera_link:
                   {}
+                left_camera_link:
+                  {}
+                rear_camera_link:
+                  {}
+                right_camera_link:
+                  {}
             vehicle/front_camera_link:
               vehicle/front_camera_link/front_camera:
+                {}
+            vehicle/left_camera_link:
+              vehicle/left_camera_link/left_camera:
+                {}
+            vehicle/rear_camera_link:
+              vehicle/rear_camera_link/rear_camera:
+                {}
+            vehicle/right_camera_link:
+              vehicle/right_camera_link/right_camera:
                 {}
             vehicle/front_left_wheel_link:
               {}
@@ -251,6 +299,54 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /front_camera/camera_info
       Value: false
+    - Class: rviz_default_plugins/Camera
+      Enabled: true
+      Far Plane Distance: 100
+      Image Rendering: background and overlay
+      Name: Rear Camera
+      Overlay Alpha: 0.5
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /rear_camera/image_raw
+      Value: true
+      Visibility:
+        Value: false
+      Zoom Factor: 1
+    - Class: rviz_default_plugins/Camera
+      Enabled: true
+      Far Plane Distance: 100
+      Image Rendering: background and overlay
+      Name: Left Camera
+      Overlay Alpha: 0.5
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /left_camera/image_raw
+      Value: true
+      Visibility:
+        Value: false
+      Zoom Factor: 1
+    - Class: rviz_default_plugins/Camera
+      Enabled: true
+      Far Plane Distance: 100
+      Image Rendering: background and overlay
+      Name: Right Camera
+      Overlay Alpha: 0.5
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /right_camera/image_raw
+      Value: true
+      Visibility:
+        Value: false
+      Zoom Factor: 1
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
