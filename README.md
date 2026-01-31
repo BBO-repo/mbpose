@@ -24,10 +24,10 @@ Note: To move the robot, make sure Gazebo is running by pressing the play button
 
 In a terminal inside the container, just run:
 ```sh
-gz topic -t "/cmd_vel" -m gz.msgs.Twist -p "linear: {x: 0.5}, angular: {z: 0.05}"
+gz topic -t "/vehicle/cmd_vel" -m gz.msgs.Twist -p "linear: {x: 0.5}, angular: {z: 0.05}"
 ```
 
 Note: You could also send messages directly from ros2:
 ```sh
-ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.1}}"
+ros2 topic pub /vehicle/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.1}}"
 ```
