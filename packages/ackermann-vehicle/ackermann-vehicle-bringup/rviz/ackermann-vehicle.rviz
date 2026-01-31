@@ -147,7 +147,7 @@ Visualization Manager:
         Inertia: false
         Mass: false
       Name: RobotModel
-      TF Prefix: ackermann-vehicle
+      TF Prefix: vehicle
       Update Interval: 0
       Value: true
       Visual Enabled: true
@@ -158,25 +158,25 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        ackermann-vehicle:
+        vehicle:
           Value: true
-        ackermann-vehicle/base_link:
+        vehicle/base_link:
           Value: false
-        ackermann-vehicle/camera_link:
+        vehicle/camera_link:
           Value: true
-        ackermann-vehicle/camera_link/camera:
+        vehicle/camera_link/camera:
           Value: true
-        ackermann-vehicle/front_left_wheel_link:
+        vehicle/front_left_wheel_link:
           Value: false
-        ackermann-vehicle/front_left_wheel_steering_link:
+        vehicle/front_left_wheel_steering_link:
           Value: false
-        ackermann-vehicle/front_right_wheel_link:
+        vehicle/front_right_wheel_link:
           Value: false
-        ackermann-vehicle/front_right_wheel_steering_link:
+        vehicle/front_right_wheel_steering_link:
           Value: false
-        ackermann-vehicle/rear_left_wheel_link:
+        vehicle/rear_left_wheel_link:
           Value: false
-        ackermann-vehicle/rear_right_wheel_link:
+        vehicle/rear_right_wheel_link:
           Value: false
         base_link:
           Value: true
@@ -191,25 +191,25 @@ Visualization Manager:
       Show Names: true
       Tree:
         odom:
-          ackermann-vehicle:
-            ackermann-vehicle/base_link:
+          vehicle:
+            vehicle/base_link:
               base_link:
                 camera_link:
                   {}
-            ackermann-vehicle/camera_link:
-              ackermann-vehicle/camera_link/camera:
+            vehicle/camera_link:
+              vehicle/camera_link/camera:
                 {}
-            ackermann-vehicle/front_left_wheel_link:
+            vehicle/front_left_wheel_link:
               {}
-            ackermann-vehicle/front_left_wheel_steering_link:
+            vehicle/front_left_wheel_steering_link:
               {}
-            ackermann-vehicle/front_right_wheel_link:
+            vehicle/front_right_wheel_link:
               {}
-            ackermann-vehicle/front_right_wheel_steering_link:
+            vehicle/front_right_wheel_steering_link:
               {}
-            ackermann-vehicle/rear_left_wheel_link:
+            vehicle/rear_left_wheel_link:
               {}
-            ackermann-vehicle/rear_right_wheel_link:
+            vehicle/rear_right_wheel_link:
               {}
       Update Interval: 0
       Value: true
@@ -297,7 +297,7 @@ Visualization Manager:
       Name: Current View
       Near Clip Distance: 0.009999999776482582
       Pitch: 0.4147973954677582
-      Target Frame: ackermann-vehicle
+      Target Frame: vehicle
       Value: Orbit (rviz)
       Yaw: 4.108576774597168
     Saved: ~

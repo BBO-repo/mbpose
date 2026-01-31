@@ -14,7 +14,7 @@
     The front wheels can steer independently to achieve Ackermann geometry,
     while the rear wheels are fixed and provide propulsion.
   -->
-  <model name='ackermann-vehicle'>    
+  <model name='vehicle'>    
     <!-- Model properties -->
     <self_collide>false</self_collide>
     <static>false</static>
@@ -28,7 +28,7 @@
     -->
     <link name='base_link'>
       <!-- Gazebo frame identifier for ROS integration -->
-      <gz_frame_id>ackermann-vehicle/base_link</gz_frame_id>
+      <gz_frame_id>vehicle/base_link</gz_frame_id>
       <!-- Position offset: slightly forward and elevated to center of mass -->
       <pose>-0.151427 -0 0.175 0 -0 0</pose>
       
@@ -77,7 +77,7 @@
     -->
     <link name='camera_link'>
       <!-- Gazebo frame identifier for ROS integration -->
-      <gz_frame_id>ackermann-vehicle/camera_link</gz_frame_id>
+      <gz_frame_id>vehicle/camera_link</gz_frame_id>
       <!-- Position: front center of vehicle, elevated for good field of view -->
       <!-- Rear face of camera box aligned with front face of chassis -->
       <pose>0.904283 0 0.35 0 0 0</pose>
@@ -683,7 +683,7 @@
       
       Parameters:
       - odom_frame: Frame name for odometry (odom)
-      - robot_base_frame: Base frame of the robot (ackermann-vehicle)
+      - robot_base_frame: Base frame of the robot (vehicle)
       - odom_topic: Topic name for odometry messages (odom)
       - dimensions: Number of dimensions (3 for 3D)
     -->
@@ -691,7 +691,7 @@
       filename="gz-sim-odometry-publisher-system"
       name="gz::sim::systems::OdometryPublisher">
       <odom_frame>odom</odom_frame>
-      <robot_base_frame>ackermann-vehicle</robot_base_frame>
+      <robot_base_frame>vehicle</robot_base_frame>
       <odom_topic>odom</odom_topic> 
       <dimensions>3</dimensions>
     </plugin>

@@ -70,7 +70,7 @@ def generate_launch_description():
         output='screen',
         arguments=[
             '-topic', '/robot_description',
-            '-name', 'ackermann-vehicle',
+            '-name', 'vehicle',
             '-allow_renaming', 'true',
             '-z', '0.35'
         ]
@@ -82,7 +82,7 @@ def generate_launch_description():
         executable='static_transform_publisher',
         name='base_link_tf_publisher',
         arguments=['0', '0', '0', '0', '0', '0', '1', 
-                   'ackermann-vehicle/base_link', 'base_link']
+                   'vehicle/base_link', 'base_link']
     )
     
     # Static transform to create camera_link alias (without prefix)
@@ -91,7 +91,7 @@ def generate_launch_description():
         executable='static_transform_publisher',
         name='camera_link_tf_publisher',
         arguments=['0', '0', '0', '0', '0', '0', '1',
-                   'ackermann-vehicle/camera_link', 'camera_link']
+                   'vehicle/camera_link', 'camera_link']
     )
     
     return LaunchDescription([

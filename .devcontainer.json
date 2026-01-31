@@ -1,12 +1,12 @@
 {
-	"name": "ackerdrive",
+	"name": "mbpose",
 	"build": {
 		"dockerfile": "./Dockerfile",
 		"context": ".",
 		"args": {}
 	},
 	"runArgs": [
-		"--name=ackerdrive",
+		"--name=mbpose",
 		"--net=host",
 		"-e", "DISPLAY=${env:DISPLAY}",
 		"-e", "QT_X11_NO_MITSHM=1",
