@@ -152,12 +152,16 @@
     <!--
       Rear Camera Link
       ================
-      Rear-facing camera sensor. Positioned at the rear center of the vehicle.
-      Yaw 180° (π rad) so the camera faces -x (rear).
+      Rear-facing camera sensor on the exterior of the chassis. The rear face of
+      the camera box (link +z at +0.03) is flush with the chassis rear face
+      (x = -1.00571 = -half_length). Camera body extends backward (more negative x).
+      Pitch -90° so camera -z (optical axis) aligns with base -x (looks rear).
     -->
     <link name='rear_camera_link'>
       <gz_frame_id>vehicle/rear_camera_link</gz_frame_id>
-      <pose>-0.904283 0 0.35 0 0 3.14159</pose>
+      <!-- Center at x = -1.03571 so rear face (link +z at +0.03) is at chassis rear x = -1.00571; camera is exterior -->
+      <!-- Pitch -90° (-1.5708) so camera -z aligns with base -x (looks backward) -->
+      <pose>-1.03571 0 0.35 0 -1.5708 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -214,12 +218,15 @@
     <!--
       Left Camera Link
       ================
-      Left-facing camera sensor. Positioned at the left side center of the vehicle.
-      Yaw 90° (π/2 rad) so the camera faces +y (left).
+      Left-facing camera sensor. Positioned so the rear face of the camera box
+      is aligned with the left face of the chassis (y = 0.5). Roll -90° so
+      camera -z (optical axis) aligns with base +y (looks left).
     -->
     <link name='left_camera_link'>
       <gz_frame_id>vehicle/left_camera_link</gz_frame_id>
-      <pose>0 0.5 0.35 0 0 1.5708</pose>
+      <!-- Center at y = 0.53 so rear face (link +z at +0.03) is at chassis left face y = 0.5 -->
+      <!-- Roll -90° (-1.5708) so camera -z aligns with base +y (looks left) -->
+      <pose>0 0.53 0.35 -1.5708 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -276,12 +283,15 @@
     <!--
       Right Camera Link
       =================
-      Right-facing camera sensor. Positioned at the right side center of the vehicle.
-      Yaw -90° (-π/2 rad) so the camera faces -y (right).
+      Right-facing camera sensor. Positioned so the rear face of the camera box
+      is aligned with the right face of the chassis (y = -0.5), same convention
+      as the front camera. Camera looks in -y (right). Yaw 0 so link +y is base +y.
     -->
     <link name='right_camera_link'>
       <gz_frame_id>vehicle/right_camera_link</gz_frame_id>
-      <pose>0 -0.5 0.35 0 0 -1.5708</pose>
+      <!-- Center at y = -0.53 so rear face (link +z at +0.03) is at chassis right face y = -0.5 -->
+      <!-- Roll 90° (1.5708) so camera -z (optical axis) aligns with base -y (looks right) -->
+      <pose>0 -0.53 0.35 1.5708 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
