@@ -3,7 +3,7 @@
   <!--
     Ackermann Steering Vehicle Model
     =================================
-    This model represents a 4-wheeled vehicle with Ackermann steering geometry.
+    Model representing of a 4-wheeled vehicle with Ackermann steering geometry.
     The vehicle consists of:
     - A base link (chassis)
     - Four wheels (front left, front right, rear left, rear right)
@@ -22,15 +22,15 @@
     <!--
       Base Link (Chassis)
       ===================
-      The main body of the vehicle. This link serves as the root of the kinematic tree.
-      All other links (wheels, steering) are connected to this base link.
-      Dimensions: ~2.01m x 1.0m x 0.57m (length x width x height)
+      The main body of the vehicle.
+      This link serves as the root of the kinematic tree.
+      Dimensions: 2m x 1m x 0.5m (length x width x height)
     -->
     <link name='base_link'>
       <!-- Gazebo frame identifier for ROS integration -->
       <gz_frame_id>vehicle/base_link</gz_frame_id>
       <!-- Position offset: slightly forward and elevated to center of mass -->
-      <pose>-0.151427 -0 0.175 0 -0 0</pose>
+      <pose>0.0 0.0 0.25 0.0 0.0 0.0</pose>
       
       <!-- Inertial properties: mass and moment of inertia tensor -->
       <inertial>
@@ -49,7 +49,7 @@
       <visual name='base_link_visual'>
         <geometry>
           <box>
-            <size>2.01142 1 0.568726</size>
+            <size>2.0 1.0 0.5</size>
           </box>
         </geometry>
         <material>
@@ -63,7 +63,7 @@
       <collision name='base_link_collision'>
         <geometry>
           <box>
-            <size>2.01142 1 0.568726</size>
+            <size>2.0 1.0 0.5</size>
           </box>
         </geometry>
       </collision>
@@ -80,7 +80,7 @@
       <gz_frame_id>vehicle/front_camera_link</gz_frame_id>
       <!-- Position: front center of vehicle, elevated for good field of view -->
       <!-- Rear face of camera box aligned with front face of chassis -->
-      <pose>0.904283 0 0.35 0 0 0</pose>
+      <pose>1.025 0 0.35 0 0 0</pose>
       
       <!-- Inertial properties: lightweight camera -->
       <inertial>
@@ -99,7 +99,7 @@
       <visual name='front_camera_link_visual'>
         <geometry>
           <box>
-            <size>0.1 0.08 0.06</size>
+            <size>0.05 0.08 0.06</size>
           </box>
         </geometry>
         <material>
@@ -113,7 +113,7 @@
       <collision name='front_camera_link_collision'>
         <geometry>
           <box>
-            <size>0.1 0.08 0.06</size>
+            <size>0.05 0.08 0.06</size>
           </box>
         </geometry>
       </collision>
@@ -161,7 +161,7 @@
       <gz_frame_id>vehicle/rear_camera_link</gz_frame_id>
       <!-- Center at x = -1.03571 so rear face (link +z at +0.03) is at chassis rear x = -1.00571; camera is exterior -->
       <!-- Pitch -90° (-1.5708) so camera -z aligns with base -x (looks backward) -->
-      <pose>-1.03571 0 0.35 0 -1.5708 0</pose>
+      <pose>-1.025 0 0.35 0 -1.5708 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -176,7 +176,7 @@
       <visual name='rear_camera_link_visual'>
         <geometry>
           <box>
-            <size>0.1 0.08 0.06</size>
+            <size>0.05 0.08 0.06</size>
           </box>
         </geometry>
         <material>
@@ -188,7 +188,7 @@
       <collision name='rear_camera_link_collision'>
         <geometry>
           <box>
-            <size>0.1 0.08 0.06</size>
+            <size>0.05 0.08 0.06</size>
           </box>
         </geometry>
       </collision>
@@ -226,7 +226,7 @@
       <gz_frame_id>vehicle/left_camera_link</gz_frame_id>
       <!-- Center at y = 0.53 so rear face (link +z at +0.03) is at chassis left face y = 0.5 -->
       <!-- Roll -90° (-1.5708) so camera -z aligns with base +y (looks left) -->
-      <pose>0 0.53 0.35 -1.5708 0 0</pose>
+      <pose>0 0.5 0.35 -1.5708 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -241,7 +241,7 @@
       <visual name='left_camera_link_visual'>
         <geometry>
           <box>
-            <size>0.1 0.08 0.06</size>
+            <size>0.05 0.08 0.06</size>
           </box>
         </geometry>
         <material>
@@ -253,7 +253,7 @@
       <collision name='left_camera_link_collision'>
         <geometry>
           <box>
-            <size>0.1 0.08 0.06</size>
+            <size>0.05 0.08 0.06</size>
           </box>
         </geometry>
       </collision>
@@ -291,7 +291,7 @@
       <gz_frame_id>vehicle/right_camera_link</gz_frame_id>
       <!-- Center at y = -0.53 so rear face (link +z at +0.03) is at chassis right face y = -0.5 -->
       <!-- Roll 90° (1.5708) so camera -z (optical axis) aligns with base -y (looks right) -->
-      <pose>0 -0.53 0.35 1.5708 0 0</pose>
+      <pose>0 -0.5 0.35 1.5708 0 0</pose>
       <inertial>
         <mass>0.1</mass>
         <inertia>
@@ -306,7 +306,7 @@
       <visual name='right_camera_link_visual'>
         <geometry>
           <box>
-            <size>0.1 0.08 0.06</size>
+            <size>0.05 0.08 0.06</size>
           </box>
         </geometry>
         <material>
@@ -318,7 +318,7 @@
       <collision name='right_camera_link_collision'>
         <geometry>
           <box>
-            <size>0.1 0.08 0.06</size>
+            <size>0.05 0.08 0.06</size>
           </box>
         </geometry>
       </collision>
